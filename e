@@ -21,7 +21,7 @@ public class App {
             System.out.print("\nPlease enter the c value: ")
             double quadC = keyboard.next();
 
-            // turn ax + bx + c into a(x -h)^2 + k
+            // turn ax^2 + bx + c into a(x -h)^2 + k
             // check is a is positive or negative
             // print out range (k value)
 
@@ -34,10 +34,12 @@ public class App {
             System.out.print("\nPlease enter the k value: ")
             double quadK = keyboard.next();
 
-            System.out.println("Domain is a real number / {x | x ∈ R}
+            System.out.println("Domain is a real number / {x | x ∈ R}");
             if (a > 0) {
-
-            System.out.println("Range is BLANK / {y | y ∈ R |  }"); // update
+                System.out.println("Range is anything greater than or equal to " + quadK + " / {y | y ∈ R | y ≥ " + quadK + " }");
+            } else if (a < 0) {
+                System.out.println("Range is anything less than or equal to " + quadK + " / {y | y ∈ R | y ≤ " + quadK + " }");
+            }
           }
         }
         
