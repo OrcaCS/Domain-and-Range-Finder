@@ -112,7 +112,19 @@ public class App {
                 }
             } 
         } else if (type.equals("square root")) {
-            System.out.println("placeholder");
+            System.out.println("Format is y = a √ (b (x − h)) + k.");
+            
+            System.out.println("Please enter the a value: ")
+            double quadA = keyboard.nextDouble();
+            System.out.println("Please enter the b value: ")
+            double quadB = keyboard.nextDouble();
+            System.out.println("Please enter the h value: ")
+            double quadH = keyboard.nextDouble();
+            System.out.println("Please enter the K value: ")
+            double quadK = keyboard.nextDouble();
+            
+            // if a is positive, k is greater. if a is negative, k is smaller
+            // if b is positive, h is greater. if b is negative, b is smaller
             
         } else if (type.equals("absolute")) {
             System.out.println("placeholder");
