@@ -8,7 +8,8 @@ public class App {
         String type = keyboard.nextLine();
 
         if (type.equals("linear")) { // linear function
-            System.out.println("\nFormat is y = mx + b. \nDomain is a real number / { x | x ∈ R} \nRange is a real number / {y | y ∈ R}");
+            System.out.println("\nFormat is y = mx + b. \nDomain is a real number / { x | x ∈ R}  \nRange is a real number / { y | y ∈ R }");
+            
         } else if (type.equals("quadratic")) { // quadratic function
             System.out.println("\nPlease enter the capital letter matching the form. \nA. ax^2 + bx + c = 0 \nB. y = a(x - h)^2 + k \nC. y = a(x - p)(x - q)");
             String form = keyboard.nextLine();
@@ -56,12 +57,12 @@ public class App {
                     }
                 }
             
-                System.out.println("\nDomain is a real number / {x | x ∈ R}");
+                System.out.println("\nDomain is a real number / { x | x ∈ R }");
             
                 if (quadA > 0) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / {y | y ∈ R | y ≥ " + quadK + " }");
+                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y ∈ R | y ≥ " + quadK + " }");
                 } else { // quadA < 0
-                    System.out.println("Range is anything less than or equal to " + quadK + " / {y | y ∈ R | y ≤ " + quadK + " }");
+                    System.out.println("Range is anything less than or equal to " + quadK + " / { y | y ∈ R | y ≤ " + quadK + " }");
                 }
             } else if (form.equals("B")) { // quad option B
                 System.out.print("\nPlease enter the a value: ");
@@ -69,12 +70,12 @@ public class App {
                 System.out.print("Please enter the k value: ");
                 double quadK = keyboard.nextDouble();
 
-                System.out.println("\nDomain is a real number / {x | x ∈ R}");
+                System.out.println("\nDomain is a real number / { x | x ∈ R }");
             
                 if (quadA > 1) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / {y | y ∈ R | y ≥ " + quadK + " }");
+                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y ∈ R | y ≥ " + quadK + " }");
                 } else { // quadA < 0
-                    System.out.println("Range is anything less than or equal to " + quadK + " / {y | y ∈ R | y ≤ " + quadK + " }");
+                    System.out.println("Range is anything less than or equal to " + quadK + " / { y | y ∈ R | y ≤ " + quadK + " }");
                 }
             } else if (form.equals("C")) { // quad option C
                 System.out.print("\nPlease enter the a value: ");
@@ -103,12 +104,12 @@ public class App {
                     }
                 }
             
-                System.out.println("\nDomain is a real number / {x | x ∈ R}");
+                System.out.println("\nDomain is a real number / { x | x ∈ R }");
             
                 if (quadA > 0) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / {y | y ∈ R | y ≥ " + quadK + " }");
+                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y ∈ R | y ≥ " + quadK + " }");
                 } else { // quadA < 0
-                    System.out.println("Range is anything less than or equal to " + quadK + " / {y | y ∈ R | y ≤ " + quadK + " }");
+                    System.out.println("Range is anything less than or equal to " + quadK + " / { y | y ∈ R | y ≤ " + quadK + " }");
                 }
             } 
         } else if (type.equals("square root")) {
@@ -124,14 +125,14 @@ public class App {
             double quadK = keyboard.nextDouble();
             
             if (quadB > 0) {
-                System.out.println("\nDomain is anything greater than or equal to " + quadH + " / {x | x ∈ R | x ≥ " + quadH + "}");
+                System.out.println("\nDomain is anything greater than or equal to " + quadH + " / { x | x ∈ R | x ≥ " + quadH + " }");
             } else {
-                System.out.println("\nDomain is anything less than or equal to " + quadH + " / {x | x ∈ R | x ≤ " + quadH + "}");
+                System.out.println("\nDomain is anything less than or equal to " + quadH + " / { x | x ∈ R | x ≤ " + quadH + " }");
             }
             if (quadA > 0) {
-                System.out.println("Range is anything greater than or equal to " + quadK + " / {y | y ∈ R | y ≥ " + quadK + "}");
+                System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y ∈ R | y ≥ " + quadK + " }");
             } else {
-                System.out.println("Range is anything less than or equal to " + quadK + " / {y | y ∈ R | y ≤ " + quadK + "}");
+                System.out.println("Range is anything less than or equal to " + quadK + " / { y | y ∈ R | y ≤ " + quadK + " }");
             }
             
         } else if (type.equals("absolute")) {
@@ -142,12 +143,12 @@ public class App {
             System.out.print("Please enter the k value: ");
             double quadK = keyboard.nextDouble();
             
-            System.out.println("\nDomain is a real number / {x | x ∈ R}");
+            System.out.println("\nDomain is a real number / { x | x ∈ R }");
             
             if (quadA > 0) {
-                System.out.println("Range is anything greater than or equal to " + quadK + " / {y | y ∈ R | y ≥ " + quadK + "}");
+                System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y ∈ R | y ≥ " + quadK + " }");
             } else {
-                System.out.println("Range is anything less than or equal to " + quadK + " / {y | y ∈ R | y ≤ " + quadK + "}");
+                System.out.println("Range is anything less than or equal to " + quadK + " / { y | y ∈ R | y ≤ " + quadK + " }");
             }
         } else if (type.equals("reciprocal")) {
             System.out.println("Format is y = a / (x - h) + k \nOnly reciprocal functions with a degree of 1 work for now.");
@@ -157,8 +158,8 @@ public class App {
             System.out.print("Please enter the k value: ");
             double quadK = keyboard.nextDouble();
             
-            System.out.println("\nDomain is anything but " + quadH + " / {x | x ∈ R | -∞ > x ∪ x < ∞}");
-            System.out.println("Range is anything but " + quadK + " / {y | y ∈ R | -∞ > y ∪ y < ∞}");
+            System.out.println("\nDomain is anything but " + quadH + " / { x | x ∈ R | -∞ > x ∪ x < ∞ }");
+            System.out.println("Range is anything but " + quadK + " / { y | y ∈ R | -∞ > y ∪ y < ∞ }");
         }
     }
 }
