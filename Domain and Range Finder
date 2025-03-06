@@ -60,7 +60,7 @@ public class App {
                 System.out.println("\nDomain is a real number / { x | x E R }");
             
                 if (quadA > 0) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y ≥ " + quadK + " }");
+                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y >= " + quadK + " }");
                 } else { // quadA < 0
                     System.out.println("Range is anything less than or equal to " + quadK + " / { y | y E R | y ≤ " + quadK + " }");
                 }
@@ -113,7 +113,7 @@ public class App {
                 }
             } 
         } else if (type.equals("square root")) {
-            System.out.println("\nFormat is y = a √ (b (x − h)) + k.");
+            System.out.println("\nFormat is y = a [sqrt](b (x - h)) + k.");
             
             System.out.print("Please enter the a value: ");
             double quadA = keyboard.nextDouble();
