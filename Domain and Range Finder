@@ -1,165 +1,172 @@
 import java.util.Scanner;
 
-public class App {
+public class Quadratic {
+    Scanner keyboard = new Scanner(System.in);
+    public double a;
+    public double b;
+    public double c;
+    
     public static void main(String[] args) throws Exception {
-        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Hello, World!");
+    }
 
-        System.out.println("\nPlease enter your function type (linear / quadratic / square root / absolute / reciprocal): ");
-        String type = keyboard.nextLine();
+    public double getA() {
+        return a;
+    }
 
-        if (type.equals("linear")) { // linear function
-            System.out.println("\nFormat is y = mx + b. \nDomain is a real number / { x | x E R}  \nRange is a real number / { y | y E R }");
-            
-        } else if (type.equals("quadratic")) { // quadratic function
-            System.out.println("\nPlease enter the capital letter matching the form. \nA. ax^2 + bx + c = 0 \nB. y = a(x - h)^2 + k \nC. y = a(x - p)(x - q)");
-            String form = keyboard.nextLine();
-            
-            if (form.equals("A")) { // quad option A
-                System.out.print("\nPlease enter the a value: ");
-                double quadA = keyboard.nextDouble();
-                System.out.print("Please enter the b value: ");
-                double quadB = keyboard.nextDouble();
-                System.out.print("Please enter the c value: ");
-                double quadC = keyboard.nextDouble();
+    public double getB() {
+        return b;
+    }
 
-                double quadH = quadB / (2 * quadA);
-                double quadK = quadC - quadB * quadB / (4 * quadA);
+    public double getC() {
+        return c;
+    }
 
-                if (quadA != 1) {
-                    if (quadH > 0) {
-                        if (quadK > 0) {
-                            System.out.println("\nYour vertex form is: " + quadA + "(x + " + quadH + ") + " + quadH);
-                        } else if (quadK < 0) {
-                            System.out.println("\nYour vertex form is: " + quadA + "(x + " + quadH + ") - " + Math.abs(quadK));
-                        }
-                    } else { // h < 0
-                        if (quadK > 0) {
-                            System.out.println("\nYour vertex form is: " + quadA + "(x - " + Math.abs(quadH) + ") + " + quadH);
-                        } else if (quadK < 0) {
-                            System.out.println("\nYour vertex form is: " + quadA + "(x - " + Math.abs(quadH) + ") - " + Math.abs(quadK));
-                        }
-                    }
-                }
-                
-                if (quadA == 1) {
-                    if (quadH > 0) {
-                        if (quadK > 0) {
-                            System.out.println("\nYour vertex form is: (x + " + quadH + ") + " + quadH);
-                        } else if (quadK < 0) {
-                            System.out.println("\nYour vertex form is: (x + " + quadH + ") - " + Math.abs(quadK));
-                        }
-                    } else { // h < 0
-                        if (quadK > 0) {
-                            System.out.println("\nYour vertex form is: (x - " + Math.abs(quadH) + ") + " + quadH);
-                        } else if (quadK < 0) {
-                            System.out.println("\nYour vertex form is: (x - " + Math.abs(quadH) + ") - " + Math.abs(quadK));
-                        }
-                    }
-                }
-            
-                System.out.println("\nDomain is a real number / { x | x E R }");
-            
-                if (quadA > 0) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y >= " + quadK + " }");
-                } else { // quadA < 0
-                    System.out.println("Range is anything less than or equal to " + quadK + " / { y | y E R | y ≤ " + quadK + " }");
-                }
-            } else if (form.equals("B")) { // quad option B
-                System.out.print("\nPlease enter the a value: ");
-                double quadA = keyboard.nextDouble();
-                System.out.print("Please enter the k value: ");
-                double quadK = keyboard.nextDouble();
+    public void setA(double a) {
+        System.out.println("Please enter the new value of a.");
+        a = keyboard.nextDouble();
+    }
 
-                System.out.println("\nDomain is a real number / { x | x E R }");
-            
-                if (quadA > 1) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y ≥ " + quadK + " }");
-                } else { // quadA < 0
-                    System.out.println("Range is anything less than or equal to " + quadK + " / { y | y E R | y ≤ " + quadK + " }");
-                }
-            } else if (form.equals("C")) { // quad option C
-                System.out.print("\nPlease enter the a value: ");
-                double quadA = keyboard.nextDouble();
-                System.out.print("Please enter the p value: ");
-                double quadP = keyboard.nextDouble();
-                System.out.print("Please enter the q value: ");
-                double quadQ = keyboard.nextDouble();
-                
-                double quadH = (quadP + quadQ) / 2;
-                double quadK = quadA * (quadH - quadP) * (quadH - quadQ);
-                
-                if (quadA == 1) {
-                    if (quadH > 0) {
-                        if (quadK > 0) {
-                            System.out.println("\nYour vertex form is: (x + " + quadH + ") + " + quadH);
-                        } else if (quadK < 0) {
-                            System.out.println("\nYour vertex form is: (x + " + quadH + ") - " + Math.abs(quadK));
-                        }
-                    } else { // h < 0
-                        if (quadK > 0) {
-                            System.out.println("\nYour vertex form is: (x - " + Math.abs(quadH) + ") + " + quadH);
-                        } else if (quadK < 0) {
-                            System.out.println("\nYour vertex form is: (x - " + Math.abs(quadH) + ") - " + Math.abs(quadK));
-                        }
-                    }
-                }
-            
-                System.out.println("\nDomain is a real number / { x | x E R }");
-            
-                if (quadA > 0) {
-                    System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y >= " + quadK + " }");
-                } else { // quadA < 0
-                    System.out.println("Range is anything less than or equal to " + quadK + " / { y | y E R | y <= " + quadK + " }");
-                }
-            } 
-        } else if (type.equals("square root")) {
-            System.out.println("\nFormat is y = a [sqrt](b (x - h)) + k.");
-            
-            System.out.print("Please enter the a value: ");
-            double quadA = keyboard.nextDouble();
-            System.out.print("Please enter the b value: ");
-            double quadB = keyboard.nextDouble();
-            System.out.print("Please enter the h value: ");
-            double quadH = keyboard.nextDouble();
-            System.out.print("Please enter the K value: ");
-            double quadK = keyboard.nextDouble();
-            
-            if (quadB > 0) {
-                System.out.println("\nDomain is anything greater than or equal to " + quadH + " / { x | x E R | x >= " + quadH + " }");
-            } else {
-                System.out.println("\nDomain is anything less than or equal to " + quadH + " / { x | x E R | x <= " + quadH + " }");
-            }
-            if (quadA > 0) {
-                System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y >= " + quadK + " }");
-            } else {
-                System.out.println("Range is anything less than or equal to " + quadK + " / { y | y E R | y <= " + quadK + " }");
-            }
-            
-        } else if (type.equals("absolute")) {
-            System.out.println("\nFormat is y = a |x - h| + k");
-            
-            System.out.print("Please enter the a value: ");
-            double quadA = keyboard.nextDouble();
-            System.out.print("Please enter the k value: ");
-            double quadK = keyboard.nextDouble();
-            
-            System.out.println("\nDomain is a real number / { x | x E R }");
-            
-            if (quadA > 0) {
-                System.out.println("Range is anything greater than or equal to " + quadK + " / { y | y E R | y >= " + quadK + " }");
-            } else {
-                System.out.println("Range is anything less than or equal to " + quadK + " / { y | y E R | y <= " + quadK + " }");
-            }
-        } else if (type.equals("reciprocal")) {
-            System.out.println("Format is y = a / (x - h) + k \nOnly reciprocal functions with a degree of 1 work for now.");
-            
-            System.out.print("Please enter the h value: ");
-            double quadH = keyboard.nextDouble();
-            System.out.print("Please enter the k value: ");
-            double quadK = keyboard.nextDouble();
-            
-            System.out.println("\nDomain is anything but " + quadH + " / { x | x E R | -infinity > x U x < infinity }");
-            System.out.println("Range is anything but " + quadK + " / { y | y E R | -infinity > y U y < infinity }");
+    public void setB(double b) {
+        System.out.println("Please enter the new value of b.");
+        b = keyboard.nextDouble();
+    }
+
+    public void setC(double c) {
+        System.out.println("Please enter the new value of c.");
+        c = keyboard.nextDouble();
+    }
+
+    public boolean hasRealRoots() {
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant >= 0) {
+            return true;
+        } else {
+            return false;
         }
+    }
+
+    public boolean isMaximum() {
+        if (a < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public double getDiscriminant() {
+        double discriminant = b * b - 4 * a * c;
+        return discriminant;
+    }
+
+    public double[] getRoots() {
+        double[] roots = new double[2];
+        double discriminant = b * b - 4 * a * c;
+        roots[0] = (-b + Math.sqrt(discriminant)) / (2 * a);
+        roots[1] = (-b - Math.sqrt(discriminant)) / (2 * a);
+        return roots;
+        // finds roots
+        // returns array with real roots, or null for no rotos
+    }
+
+    public double[] getVertex() {
+        double[] vertex = new double[2];
+        vertex[0] = b / (2 * a);
+        vertex[1] = c - b * b / (4 * a);
+        return vertex;
+        // returns an array where index 0 is the x-coordinate and index 1 is the y-coordinate of the vertex
+    }
+
+    public double getXIntercept() {
+        double xIntercept = 0.0;
+        //xIntercept = ()
+        // Computes the x-intercepts of the quadratic equation, if they exist.
+        // returns the x-intercept(s) or 0.0 if none exist
+        
+        // UM??? how return two x intercepts with one double
+        return xIntercept;
+    }
+
+    public double getYIntercept() {
+        return c; // if x = 0, y = c
+    }
+
+    public void getStandardForm() {
+        System.out.println(a + "x^2" + b + "x" + c);
+        
+        /*
+        if (a == 1) {
+            if (b > 0) {
+                if (c > 0) {
+                    System.out.println("x^2 + " + b + "x + " + c);
+                } else {
+                    System.out.println("x^2 + " + b + "x - " + Math.abs(c));
+                }
+            } else {
+                if (c > 0) {
+                    System.out.println("x^2 - " + Math.abs(b) + "x + " + c);
+                } else {
+                    System.out.println("x^2 - " + Math.abs(b) + "x - " + Math.abs(c));
+                }
+            }
+        } else { // a != 1
+            if (b > 0) {
+                if (c > 0) {
+                    System.out.println(a + "x^2 + " + b + "x + " + c);
+                } else {
+                    System.out.println(a + "x^2 + " + b + "x - " + Math.abs(c));
+                }
+            } else {
+                if (c > 0) {
+                    System.out.println(a + "x^2 - " + Math.abs(b) + "x + " + c);
+                } else {
+                    System.out.println(a + "x^2 - " + Math.abs(b) + "x - " + Math.abs(c));
+                }
+            }
+        }
+        */
+        // FIX SIGNS LATER (postivie signs need +, negative signs do not. space plus space.)
+        // y = ax^2 + bx + c
+        
+        System.out.println(
+            ((a == 0) ? "" : a) + 
+            "x^2 " + 
+            ((b > 0) ? "+ " + b : "- " + Math.abs(b)) + 
+            "x " + 
+            ((c > 0) ? "+ " + c : "- " + Math.abs(c)));
+    }
+
+    public void getVertexForm() {
+        double[] vertex = new double[2];
+        vertex[0] = b / (2 * a);
+        vertex[1] = c - b * b / (4 * a);
+        
+        //System.out.println("y = " + a + "(x SOMEHING" + vertex[0] + ")^2 SOMETHING" + vertex[1]);
+        // Prints the quadratic equation in vertex form.
+        
+        // a(x - h)^2 + k
+        System.out.println(
+            ((a == 0) ? "" : a) + 
+            "x " + 
+            ((vertex[0] > 0) ? "+ " + vertex[0] : "- " + Math.abs(vertex[0])) + 
+            ")^2 " + 
+            ((vertex[1] > 0) ? "+ " + vertex[1] : "- ") + Math.abs(vertex[1]));
+    }
+
+    public void getFactoredForm() {
+        double discriminant = b * b - 4 * a * c;
+        double rootOne = (-b + Math.sqrt(discriminant)) / (2 * a);
+        double rootTwo = (-b - Math.sqrt(discriminant)) / (2 * a);
+        //System.out.println("y =" + a + "(x SOMETING" + (-b + Math.sqrt(discriminant)) / (2 * a) + ")(x SOMETHING" + (-b - Math.sqrt(discriminant)) / (2 * a) + ")");
+        // Prints the quadratic equation in factored form.
+        // a(x - p)(x - q)
+        
+        System.out.println(
+            ((a == 0) ? "" : a) + 
+            "(x " + 
+            ((rootOne > 0) ? "+ " + rootOne : "- " + Math.abs(rootOne)) + 
+            ")(x " + 
+            ((rootTwo > 0) ? "+ " + rootTwo : "- " + Math.abs(rootTwo))
+            );
     }
 }
